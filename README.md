@@ -8,7 +8,7 @@ I took me while to get this together, and I want to keep on improving my dotfile
 
 All applications I use are listed here. Most of them is based on experience or recommendation.<br>
 
-## 🖼️ Screenshot
+## 🖼️ Screenshots
 
 ![Image-1](./images/shot1.png)
 
@@ -31,7 +31,7 @@ Audio: [pipewire](https://wiki.archlinux.org/title/PipeWire)<br>
 Authentication agent: [polkit-gnome](https://gitlab.gnome.org/Archive/policykit-gnome)<br>
 Status bar: [waybar](https://github.com/Alexays/Waybar)<br>
 
-Most of scripts prvoded by: Skajp<br>
+Most of scripts provided by: Skajp<br>
 
 ## 📜 Install script
 

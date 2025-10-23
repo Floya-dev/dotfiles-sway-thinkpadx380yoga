@@ -1,18 +1,12 @@
-# 🔨 currently in-dev
-
 # ✨ SwayWM Dotfiles
 
 Dotfiles for the sway window manager on my Thinkpad X380 Yoga.
-
----
 
 Feel free to modify, take inspiration or use my dotfiles! I use these configs on a daily basis, in school, at home, for literally anything, except for gaming. It's a mostly productive and comfort based setup.<br>
 
 I took me while to get this together, and I want to keep on improving my dotfiles. If you find any issues please address them in the GitHub Issues tab. I'm always looking forward on improving.<br>
 
 All applications I use are listed here. Most of them is based on experience or recommendation.<br>
-
----
 
 # 📲 Used applications
 
@@ -33,4 +27,6 @@ Audio: [pipewire](https://wiki.archlinux.org/title/PipeWire)<br>
 Authentication agent: [polkit-gnome](https://gitlab.gnome.org/Archive/policykit-gnome)<br>
 Status bar: [waybar](https://github.com/Alexays/Waybar)<br>
 
-- most of scripts by: Skajp
+Most of scripts prvoded by: Skajp<br>
+
+# 🔨 currently in-dev

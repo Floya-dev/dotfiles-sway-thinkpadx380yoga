@@ -8,7 +8,11 @@ I took me while to get this together, and I want to keep on improving my dotfile
 
 All applications I use are listed here. Most of them is based on experience or recommendation.<br>
 
-# 📲 Used applications
+## 🖼️ Screenshot
+
+![Image-1](./images/shot1.png)
+
+## 📲 Used applications
 
 Terminal emulator: [kitty](https://sw.kovidgoyal.net/kitty/)<br>
 Application launcher: [fuzzel](https://codeberg.org/dnkl/fuzzel)<br>
@@ -28,5 +32,9 @@ Authentication agent: [polkit-gnome](https://gitlab.gnome.org/Archive/policykit-
 Status bar: [waybar](https://github.com/Alexays/Waybar)<br>
 
 Most of scripts prvoded by: Skajp<br>
+
+## 📜 Install script
+
+Coming soon..<br>
 
 # 🔨 currently in-dev

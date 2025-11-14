@@ -6,7 +6,7 @@ Feel free to modify, take inspiration or use my dotfiles! I use these configs on
 
 I took me while to get this together, and I want to keep on improving my dotfiles. If you find any issues please address them in the GitHub Issues tab. I'm always looking forward on improving.<br>
 
-All applications I use are listed here. Most of them is based on experience or recommendation.<br>
+All applications I use are listed here. Most of them is based on experience or recommendations.<br>
 
 ## 🖼️ Screenshots
 
@@ -34,6 +34,8 @@ Status bar: [waybar](https://github.com/Alexays/Waybar)<br>
 Most of scripts provided by: Skajp<br>
 
 ## 📜 Install script
+
+The script is made to install applications using [yay](https://aur.archlinux.org/packages/yay). If you don't have it, install it. You can also look for the packages using your package manager. The script is just to make it easier for people who have yay.<br>
 
 Coming soon..<br>
 

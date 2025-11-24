@@ -1,0 +1,301 @@
+#   ▄▄▄▄                                 ▄▄      ▄▄ ▄▄▄  ▄▄▄ 
+# ▄█▀▀▀▀█                                ██      ██ ███  ███ 
+# ██▄      ██      ██  ▄█████▄  ▀██  ███ ▀█▄ ██ ▄█▀ ████████ 
+#  ▀████▄  ▀█  ██  █▀  ▀ ▄▄▄██   ██▄ ██   ██ ██ ██  ██ ██ ██ 
+#      ▀██  ██▄██▄██  ▄██▀▀▀██    ████▀   ███▀▀███  ██ ▀▀ ██ 
+# █▄▄▄▄▄█▀  ▀██  ██▀  ██▄▄▄███     ███    ███  ███  ██    ██ 
+#  ▀▀▀▀▀     ▀▀  ▀▀    ▀▀▀▀ ▀▀     ██     ▀▀▀  ▀▀▀  ▀▀    ▀▀ 
+#                                ███                         
+
+#▌ ▌▞▀▖▛▀▖▜▘▞▀▖▛▀▖▌  ▛▀▘▞▀▖
+#▚▗▘▙▄▌▙▄▘▐ ▙▄▌▙▄▘▌  ▙▄ ▚▄ 
+#▝▞ ▌ ▌▌▚ ▐ ▌ ▌▌ ▌▌  ▌  ▖ ▌
+# ▘ ▘ ▘▘ ▘▀▘▘ ▘▀▀ ▀▀▘▀▀▘▝▀ 
+
+# Mod key(s)
+set $mod Mod4
+
+# Movement keys
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Essential apps
+set $term kitty
+set $term_float ~/.config/sway/scripts/floating.sh kitty
+set $menu fuzzel --counter -f "BigBlueTerm437 Nerd Font Mono" --icon-theme="WhiteSur-dark" -l 11 -a center --show-actions
+set $logman wlogout
+set $files nemo
+set $files_float ~/.config/sway/scripts/floating.sh nemo
+
+# Internet
+set $brow2 chromium
+set $priv librewolf
+
+# Utilities
+#set $lock swaylock --clock --indicator --color 000000
+set $lock swaylock --clock --indicator -i /home/ondrii/Pictures/Wallpapers/SOSKOLIN.png
+set $clip clipman pick --tool=CUSTOM --tool-args="fuzzel -d"
+set $scr pgrep -x hyprshot > /dev/null || hyprshot -m region --clipboard-only
+set $scr_screen pgrep -x hyprshot /dev/null || hyprshot -m output -o ~/Pictures/Screenshots/
+set $chnwall waypaper --folder ~/Pictures/Wallpapers/
+set $pick hyprpicker --format=hex -n -a
+set $ide vscodium
+set $updatetui kitty parui -p=yay
+set $notif ~/.config/sway/scripts/notifications.sh
+set $notif-client swaync-client -t
+set $emoji BEMOJI_PICKER_CMD="fuzzel -d" bemoji -c -n
+set $comms legcord
+
+
+# Skipping output configuration
+
+
+#▛▀▖▛▀▘▞▀▖▞▀▖▛▀▖▞▀▖▀▛▘▜▘▞▀▖▙ ▌
+#▌ ▌▙▄ ▌  ▌ ▌▙▄▘▙▄▌ ▌ ▐ ▌ ▌▌▌▌
+#▌ ▌▌  ▌ ▖▌ ▌▌▚ ▌ ▌ ▌ ▐ ▌ ▌▌▝▌
+#▀▀ ▀▀▘▝▀ ▝▀ ▘ ▘▘ ▘ ▘ ▀▘▝▀ ▘ ▘
+
+# Font
+font JetBrainsMono Nerd Font 9
+
+# SwayFX
+blur enabled
+blur_passes 1
+corner_radius 3
+blur_brightness 1
+blur_xray disable
+shadows enable
+gaps inner 9
+gaps outer 5
+default_border pixel 2
+default_floating_border pixel 4
+
+# Colors
+client.focused #716792 #716792 #716792 #716792 #716792
+client.focused_inactive #000000 #000000 #000000 #000000
+client.unfocused #000000 #000000 #000000 #000000
+
+
+#▜▘▙ ▌▛▀▖▌ ▌▀▛▘
+#▐ ▌▌▌▙▄▘▌ ▌ ▌ 
+#▐ ▌▝▌▌  ▌ ▌ ▌ 
+#▀▘▘ ▘▘  ▝▀  ▘ 
+
+# Touchpad
+   input type:touchpad {
+       dwt enabled
+       tap enabled
+       natural_scroll disabled
+       middle_emulation enabled
+   }
+
+# Keyboard
+   input type:keyboard {
+       xkb_layout "us"
+   }
+
+# Gestures
+bindgesture swipe:3:left workspace prev
+bindgesture swipe:3:right workspace next
+bindgesture swipe:3:up exec "echo 1 > /tmp/sovpipe"
+bindgesture swipe:3:down exec "echo 0 > /tmp/sovpipe"
+bindgesture swipe:4:up exec $menu
+bindgesture swipe:4:down exec $lock
+
+
+#▞▀▖▀▛▘▞▀▖▛▀▖▀▛▘  ▌ ▌▛▀▖
+#▚▄  ▌ ▙▄▌▙▄▘ ▌▄▄▖▌ ▌▙▄▘
+#▖ ▌ ▌ ▌ ▌▌▚  ▌   ▌ ▌▌  
+#▝▀  ▘ ▘ ▘▘ ▘ ▘   ▝▀ ▘ 
+
+exec --no-startup-id swww-daemon
+exec wl-paste -t text --watch clipman store
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r
+exec usbguard-notifier
+exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 500
+
+
+#▌ ▌▛▀▘▌ ▌  ▛▀▖▜▘▙ ▌▛▀▖▜▘▙ ▌▞▀▖▞▀▖
+#▙▞ ▙▄ ▝▞▄▄▖▙▄▘▐ ▌▌▌▌ ▌▐ ▌▌▌▌▄▖▚▄ 
+#▌▝▖▌   ▌   ▌ ▌▐ ▌▝▌▌ ▌▐ ▌▝▌▌ ▌▖ ▌
+#▘ ▘▀▀▘ ▘   ▀▀ ▀▘▘ ▘▀▀ ▀▘▘ ▘▝▀ ▝▀ 
+
+bindsym Print exec $scr
+bindsym shift+Print exec $scr_screen
+bindsym ctrl+Print exec $pick
+
+floating_modifier $mod normal
+
+bindsym $mod+q kill
+bindsym $mod+space exec $menu
+bindsym $mod+g exec $comms
+bindsym $mod+w exec $term
+bindsym $mod+x exec $logman
+bindsym $mod+e exec $files
+bindsym $mod+z exec $clip
+bindsym $mod+a exec $brow2
+bindsym $mod+return exec $ide
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+u layout stacking
+bindsym $mod+i layout tabbed
+bindsym $mod+p layout toggle split
+bindsym $mod+minus scratchpad show # Show "scratchpad"
+bindsym $mod+r mode "resize" # Activate resize mode
+bindsym $mod+n exec $notif-client
+
+bindsym $mod+ctrl+space focus mode_toggle
+
+bindsym $mod+shift+v exec $emoji
+bindsym $mod+shift+x exec $lock
+bindsym $mod+shift+w exec $term_float
+bindsym $mod+shift+t exec $chnwall
+bindsym $mod+shift+a exec $priv
+bindsym $mod+shift+return exec $updatetui
+bindsym $mod+shift+p exec nwg-displays
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+f fullscreen
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+minus move scratchpad # Move focused window to "scratchpad"
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+z [urgent=latest] focus
+
+bindsym $mod+alt+Up exec ~/.config/sway/scripts/nightlight.sh onf
+bindsym $mod+alt+Down exec ~/.config/sway/scripts/nightlight.sh custom
+
+# Move around with vim keybinds
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move around with arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move windows with vim keybinds
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Move windows with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Switch to workspace but CZ keyboard
+bindsym $mod+plus workspace number 1
+bindsym $mod+ecaron workspace number 2
+bindsym $mod+scaron workspace number 3
+bindsym $mod+ccaron workspace number 4
+bindsym $mod+rcaron workspace number 5
+bindsym $mod+zcaron workspace number 6
+bindsym $mod+yacute workspace number 7
+bindsym $mod+aacute workspace number 8
+bindsym $mod+iacute workspace number 9
+bindsym $mod+eacute workspace number 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+    
+# Move focused container to workspace but CZ keyboard
+bindsym $mod+Shift+plus move container to workspace number 1
+bindsym $mod+Shift+ecaron move container to workspace number 2
+bindsym $mod+Shift+scaron move container to workspace number 3
+bindsym $mod+Shift+ccaron move container to workspace number 4
+bindsym $mod+Shift+rcaron move container to workspace number 5
+bindsym $mod+Shift+zcaron move container to workspace number 6
+bindsym $mod+Shift+yacute move container to workspace number 7
+bindsym $mod+Shift+aacute move container to workspace number 8
+bindsym $mod+Shift+iacute move container to workspace number 9
+bindsym $mod+Shift+eacute move container to workspace number 10
+
+# Resize container mode
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Special keys
+bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle && $notif a
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5% && $notif a
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5% && $notif a
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle && $notif c
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%- && $notif d
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+ && $notif d
+bindsym --locked XF86WakeUp exec ~/.config/sway/scripts/keyboard.sh
+
+#▞▀▖▀▛▘▞▀▖▀▛▘▌ ▌▞▀▖ ▛▀▖▞▀▖▛▀▖
+#▚▄  ▌ ▙▄▌ ▌ ▌ ▌▚▄  ▙▄▘▙▄▌▙▄▘
+#▖ ▌ ▌ ▌ ▌ ▌ ▌ ▌▖ ▌ ▌ ▌▌ ▌▌▚ 
+#▝▀  ▘ ▘ ▘ ▘ ▝▀ ▝▀  ▀▀ ▘ ▘▘ ▘
+
+bar {
+    swaybar_command waybar
+}
+
+#▌ ▌▜▘▙ ▌▛▀▖▞▀▖▌ ▌ ▛▀▖▌ ▌▌  ▛▀▘▞▀▖
+#▌▖▌▐ ▌▌▌▌ ▌▌ ▌▌▖▌ ▙▄▘▌ ▌▌  ▙▄ ▚▄ 
+#▙▚▌▐ ▌▝▌▌ ▌▌ ▌▙▚▌ ▌▚ ▌ ▌▌  ▌  ▖ ▌
+#▘ ▘▀▘▘ ▘▀▀ ▝▀ ▘ ▘ ▘ ▘▝▀ ▀▀▘▀▀▘▝▀ 
+
+for_window [app_id="qalculate-qt"] floating enable, resize set width 1030 height 710
+for_window [app_id="proton-pass"] floating enable, resize set width 1030 height 710
+for_window [app_id="blueman-manager"] floating enable, resize set width 1030 height 710
+for_window [app_id="nwg-displays"] floating enable, resize set width 1030 height 710
+
+#▛▀▘▌ ▌▀▛▘▛▀▖▞▀▖
+#▙▄ ▝▞  ▌ ▙▄▘▙▄▌
+#▌  ▞▝▖ ▌ ▌▚ ▌ ▌
+#▀▀▘▘ ▘ ▘ ▘ ▘▘ ▘
+
+layer_effects "waybar" {
+	blur enable;
+	shadows enable;
+}
+
+include /etc/sway/config.d/*

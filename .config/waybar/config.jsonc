@@ -1,0 +1,65 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "reload_style_on_change": true,
+    "gtk-layer-shell": true,
+    "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["network", "bluetooth", "battery", "tray", "clock"],
+    
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 16,
+        "icon-theme": "WhiteSur-dark",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+	"all-outputs": true,
+        "ignore-list": [
+            "python3"
+        ]
+    },
+    
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+	"format-alt": "{time} {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󱐥",
+        "format-icons": ["", "", "", "", ""]
+    },
+    
+    "network": {
+        "format-wifi": "{essid} [{signalStrength}%] 󰖩",
+	"format-alt": "{ifname}: {ipaddr}/{cidr} ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-disconnected": "Offline 󰅛",
+        "tooltip-format": "GW: {gwaddr}/{cidr} ",
+	"on-click-middle": "nmgui"
+    },
+
+    "bluetooth": {
+        "format": "{status} 󰂯",
+        "format-disabled": "Disabled 󰂲",
+        "format-connected": "{device_alias} 󰂰",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueman-manager"
+    },
+    
+    "tray": {
+        "spacing": 10
+    }
+}

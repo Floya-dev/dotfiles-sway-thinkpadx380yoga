@@ -1,0 +1,100 @@
+* {
+    font-family: "BigBlueTerm437 Nerd Font Mono", monospace;
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #1a1b26;
+    color: #c0caf5;
+    border-bottom: 3px solid #414868;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #c0caf5;
+    border: none;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    background: #414868;
+    border-bottom: 3px solid #7aa2f7;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: #24283b;
+    border-bottom: 3px solid #bb9af7;
+}
+
+#taskbar button {
+    padding: 0 5px;
+    background: transparent;
+    color: #c0caf5;
+    border: none;
+    border-bottom: 3px solid transparent;
+}
+
+#taskbar button.active {
+    background: #414868;
+    border-bottom: 3px solid #7aa2f7;
+}
+
+#taskbar button:hover {
+    background: #24283b;
+    border-bottom: 3px solid #bb9af7;
+}
+
+#battery, #cpu, #memory, #network, #clock, #tray, #taskbar button {
+    padding: 0 8px;
+    margin: 0 4px;
+    border-radius: 0px;
+    background: #24283b;
+}
+
+#battery {
+    color: #9ece6a;
+}
+
+#battery.charging {
+    color: #7aa2f7;
+}
+
+#battery.warning:not(.charging) {
+    color: #e0af68;
+}
+
+#battery.critical:not(.charging) {
+    color: #f7768e;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color: #bb9af7;
+}
+
+#memory {
+    color: #7dcfff;
+}
+
+#network {
+    color: #7aa2f7;
+}
+
+#clock {
+    color: #9ece6a;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    to {
+        color: #1a1b26;
+    }
+}

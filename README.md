@@ -30,6 +30,7 @@ Discord client: [vesktop](https://github.com/Vencord/Vesktop)<br>
 Audio: [pipewire](https://wiki.archlinux.org/title/PipeWire)<br>
 Authentication agent: [polkit-gnome](https://gitlab.gnome.org/Archive/policykit-gnome)<br>
 Status bar: [waybar](https://github.com/Alexays/Waybar)<br>
+Document viewer: [zathura](https://wiki.archlinux.org/title/Zathura)<br>
 
 Most of scripts provided by: Skajp<br>
 

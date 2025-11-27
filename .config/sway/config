@@ -39,7 +39,7 @@ set $lock swaylock --clock --indicator -i /home/ondrii/Pictures/Wallpapers/SOSKO
 set $clip clipman pick --tool=CUSTOM --tool-args="fuzzel -d"
 set $scr pgrep -x hyprshot > /dev/null || hyprshot -m region --clipboard-only
 set $scr_screen pgrep -x hyprshot /dev/null || hyprshot -m output -o ~/Pictures/Screenshots/
-set $chnwall waypaper --folder ~/Pictures/Wallpapers/
+set $chnwall ~/.config/sway/scripts/wallpaper-change.sh
 set $pick hyprpicker --format=hex -n -a
 set $ide vscodium
 set $updatetui kitty parui -p=yay
@@ -58,7 +58,8 @@ set $comms legcord
 #▀▀ ▀▀▘▝▀ ▝▀ ▘ ▘▘ ▘ ▘ ▀▘▝▀ ▘ ▘
 
 # Font
-font JetBrainsMono Nerd Font 9
+# font JetBrainsMono Nerd Font 9
+include ./configs-scripted/*
 
 # SwayFX
 blur enabled

@@ -37,7 +37,3 @@ Most of scripts provided by: Skajp<br>
 ## 📜 Install script
 
 The script is made to install applications using [yay](https://aur.archlinux.org/packages/yay). If you don't have it, install it. You can also look for the packages using your package manager. The script is just to make it easier for people who have yay.<br>
-
-Coming soon..<br>
-
-# 🔨 currently in-dev
